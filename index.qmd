@@ -1,0 +1,20 @@
+---
+title: "Genuary Submissions"
+listing:
+  contents: submissions
+  sort: "date desc"
+  type: default
+---
+
+```{=html}
+<style>
+#title-block-header > div.quarto-title > h1{
+  visibility: hidden;
+}
+
+body{
+overflow-x: hidden;
+}
+</style>
+```
+![](repo_images/banner.png){fig-align="center"}
