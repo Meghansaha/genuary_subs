@@ -1,0 +1,103 @@
+---
+title: January 13th  - Something You've Always Wanted to Learn
+date: 01-13-2023
+image: "../images/13.png"
+format:
+  html:
+    code-overflow: wrap
+    code-fold: true
+    code-tools:
+      source: "../scripts/13_always_learn.R"
+    code-summary: "Show code"
+execute:
+  echo: true
+  eval: false
+---
+
+![](/images/13.png){fig-alt="An image with a simplex noise (worm like) pattern spread throughout the image in red, purple, and blue colors on a black background." fig-align="center"}
+
+```{r}
+#=============================================================================#
+#Library Load in---------------------------------------------------------------
+#=============================================================================#
+
+library(dplyr) #Data Wrangling
+library(purrr) #List wrangling/iterations
+library(ggplot2) #Plotting
+library(ambient) #Noise work
+
+#=============================================================================#
+#Data Set up-------------------------------------------------------------------
+#=============================================================================#
+
+#Curl creation for noise#
+update_curl <- function(current_state, step_size = .000008, ...) {
+  curl <- curl_noise(
+    x = current_state$x, 
+    y = current_state$y,
+    ...
+  )
+  next_state <- current_state |>
+    mutate(
+      x = x + curl$x * step_size,
+      y = y + curl$y * step_size,
+      time = time + 1
+    )
+  return(next_state)
+}
+
+#Setting up the limits for the coordinates#
+coords <- seq(0, 1, length.out = 400)
+
+#Creating three passes of the noise curling#
+time_1 <- long_grid(x = coords, y = coords) |> 
+  mutate(id = row_number(), time = 1)
+
+time_2 <- time_1 |>
+  update_curl(
+    generator = gen_simplex,
+    frequency = 10, 
+    seed = 05181990
+  )
+
+time_3 <- time_2 |> 
+  update_curl(
+    generator = gen_simplex,
+    frequency = 10, 
+    seed = 11172022
+  )
+
+#Binding into one data frame#
+
+dat123 <- bind_rows(time_1,time_3,time_2)
+
+#Generating the simplex noise#
+dat123 <- dat123 |>
+  update_curl(
+    generator = gen_simplex,
+    frequency = 5, 
+    seed = 411
+  )
+
+#Setting a color palette#
+colorpal <- c("#af3918", "#a21152", "#822b75","#612884","#154baf",
+                       "#0b82b9", "#277e9d","#488e35","#e3a934","#b2336a")
+                       
+
+#=============================================================================#
+#Final Piece-------------------------------------------------------------------
+#=============================================================================#
+
+dat123 |>
+  ggplot(aes(x, y, group = id)) + 
+  theme_void() +
+  theme(plot.background = element_rect(fill = "#000000")) +
+  geom_path(colour = colorRampPalette(colorpal)(nrow(dat123)), linewidth = 2) +
+  coord_equal()
+
+#To save the output:
+# ggsave("images/13.png",
+#        bg = "transparent",
+#        device = "png",
+#        dpi = 300)
+```

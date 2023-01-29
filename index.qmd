@@ -3,7 +3,7 @@ title: "Genuary Submissions"
 listing:
   contents: submissions
   sort: "date"
-  type: default
+  type: grid
 ---
 
 ```{=html}

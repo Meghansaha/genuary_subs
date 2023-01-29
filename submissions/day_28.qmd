@@ -1,0 +1,25 @@
+---
+title: January 28th  - Generative Poetry (Image Made with Canva)
+
+date: 01-28-2023
+image: "../images/28.png"
+format:
+  html:
+    code-overflow: wrap
+    code-fold: true
+    code-tools:
+      source: "../scripts/28_gen_poetry.R"
+    code-summary: "Show code"
+execute:
+  echo: true
+  eval: false
+---
+
+![](/images/28.png){fig-alt="A screenshot of a fictitious imessage conversation made in Canva. The user of the iPhone has sent a stream of texts to a person named  Bestie  at 7pm on January 28th. The texts read And I don't know why, he don't ever give up ,  Please don't say you need me ,  I might kill my ex, I still love him though... ,  Not eh one in Los Angeles ,  the text gon' be evidence... this text is evidence... grimace emoji ,  I did it all on no drugs  The iPhone is in dark mode, it's screen is cracked, and the current time is 9:11." fig-align="center"}
+
+
+```{r}
+
+```
+
+

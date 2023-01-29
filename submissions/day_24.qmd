@@ -1,0 +1,22 @@
+---
+title: January 24th  - Textile
+date: 01-24-2023
+image: "../images/24.png"
+format:
+  html:
+    code-overflow: wrap
+    code-fold: true
+    code-tools:
+      source: "../scripts/24_textile.R"
+    code-summary: "Show code"
+execute:
+  echo: true
+  eval: false
+---
+
+![](/images/24.png){fig-alt="A generative art piece that shows various strips of textured fabric with various autumn-like colors (greens, reds) on a light tan gradient background." fig-align="center"}
+
+
+```{r}
+
+```

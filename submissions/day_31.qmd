@@ -1,0 +1,22 @@
+---
+title: January 31st  - Remix one of Your Previous Works
+date: 01-31-2023
+image: "../images/31.png"
+format:
+  html:
+    code-overflow: wrap
+    code-fold: true
+    code-tools:
+      source: "../scripts/31_remix.R"
+    code-summary: "Show code"
+execute:
+  echo: true
+  eval: false
+---
+
+![](/images/31.png){fig-alt="An updated image of an old piece by Meghan Harris called mountains. A landscape of a textured night sky with stars in the background, multiple polygon-shaped mountain ranges, and detailed trees in varying shades of green in the foreground" fig-align="center"}
+
+
+```{r}
+
+```

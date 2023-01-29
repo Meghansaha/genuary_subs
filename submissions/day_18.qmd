@@ -1,0 +1,21 @@
+---
+title: January 18th  - A Grid Inside A Grid Inside A Grid
+date: 01-18-2023
+image: "../images/18.png"
+format:
+  html:
+    code-overflow: wrap
+    code-fold: true
+    code-tools:
+      source: "../scripts/18_grid_inside_grid.R"
+    code-summary: "Show code"
+execute:
+  echo: true
+  eval: false
+---
+
+![](/images/18.png){fig-alt="A generative art piece that consists of four boxes that suspiciously looks like a grid. Each cube is black or white and has the words definitely not a grid scrawled about in them. The boxes are on a light pastel background of four colors." fig-align="center"}
+
+```{r}
+# Need to r-do - original not save -.-
+```

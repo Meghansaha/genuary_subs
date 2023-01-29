@@ -1,0 +1,24 @@
+---
+title: January 27th  - In the style of Hilma Af Klint
+
+date: 01-27-2023
+image: "../images/27.png"
+format:
+  html:
+    code-overflow: wrap
+    code-fold: true
+    code-tools:
+      source: "../scripts/27_hilma_af_klint.R"
+    code-summary: "Show code"
+execute:
+  echo: true
+  eval: false
+---
+
+![](/images/27.png){fig-alt="A generative image with a big red circle in the center, a black triangle with random white lines in the center of the red circle. A partial big green circle in the top left corner of the image with 3 smaller green circles descending in size to the right. In the bottom right corner is a partial big blue circle, with three smaller blue circles to the left of it in descending size." fig-align="center"}
+
+
+```{r}
+
+```
+

@@ -1,0 +1,21 @@
+---
+title: January 30th  - Minimalism
+date: 01-30-2023
+image: "../images/30.png"
+format:
+  html:
+    code-overflow: wrap
+    code-fold: true
+    code-tools:
+      source: "../scripts/30_minimalism.R"
+    code-summary: "Show code"
+execute:
+  echo: true
+  eval: false
+---
+
+![](/images/30.png){fig-alt="A generative image of a white moon in a black night sky. The moon has simple circular lined patterns. The night sky has a similar circular pattern but in white." fig-align="center"}
+
+```{r}
+
+```

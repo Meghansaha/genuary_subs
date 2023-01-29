@@ -1,0 +1,22 @@
+---
+title: January 22nd  - Shadows
+date: 01-22-2023
+image: "../images/22.png"
+format:
+  html:
+    code-overflow: wrap
+    code-fold: true
+    code-tools:
+      source: "../scripts/22_shadows.R"
+    code-summary: "Show code"
+execute:
+  echo: true
+  eval: false
+---
+
+![](/images/22.png){fig-alt="A nineties inspired abstract image with various sizes and pastel colors of squares, triangles, circles, and squiggly lines on a blue and yellow gradient in the background." fig-align="center"}
+
+
+```{r}
+
+```

@@ -1,0 +1,23 @@
+---
+title: January 21st  - Persian Rug
+date: 01-21-2023
+image: "../images/21.png"
+format:
+  html:
+    code-overflow: wrap
+    code-fold: true
+    code-tools:
+      source: "../scripts/21_persian_rug.R"
+    code-summary: "Show code"
+execute:
+  echo: true
+  eval: false
+---
+
+![](/images/21.png){fig-alt="A generative art piece that is designed as a blue rug. The border is checkered with varying blue squares, the center is dark blue with a single textured gold diamond in the center. A black border is around the dark blue section of the rug." fig-align="center"}
+
+
+```{r}
+
+```
+

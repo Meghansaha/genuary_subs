@@ -1,0 +1,22 @@
+---
+title: January 17th  - A Grid Inside A Grid Inside A Grid
+date: 01-17-2023
+image: "../images/17.png"
+format:
+  html:
+    code-overflow: wrap
+    code-fold: true
+    code-tools:
+      source: "../scripts/17_grid_inside_grid.R"
+    code-summary: "Show code"
+execute:
+  echo: true
+  eval: false
+---
+
+![](/images/17.png){fig-alt="A generative art piece of a small square grid of rainbow colored lines that has been blown up and layered over each other multiple times on a black background. The lines appear to be a bit distorted." fig-align="center"}
+
+```{r}
+
+
+```

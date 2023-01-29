@@ -1,0 +1,22 @@
+---
+title: January 29th  - Maximailism
+
+date: 01-29-2023
+image: "../images/29.png"
+format:
+  html:
+    code-overflow: wrap
+    code-fold: true
+    code-tools:
+      source: "../scripts/29_maximalism.R"
+    code-summary: "Show code"
+execute:
+  echo: true
+  eval: false
+---
+
+![](/images/29.png){fig-alt="A generative image with multiple rainbow finger-like shapes dropping from the top and rising from the bottom on a black and white gradient and rainbow-colored polka dots." fig-align="center"}
+
+
+```{r}
+

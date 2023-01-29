@@ -1,0 +1,22 @@
+---
+title: January 20th  - Art Deco
+date: 01-20-2023
+image: "../images/20.png"
+format:
+  html:
+    code-overflow: wrap
+    code-fold: true
+    code-tools:
+      source: "../scripts/20_art_deco.R"
+    code-summary: "Show code"
+execute:
+  echo: true
+  eval: false
+---
+
+![](/images/20.png){fig-alt="A silhouette of an art deco-styled skyscraper with gold accents. With a gold patterned design and dark red gradient in the background." fig-align="center"}
+
+
+```{r}
+
+```

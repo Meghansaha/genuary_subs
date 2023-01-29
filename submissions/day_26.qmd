@@ -1,0 +1,22 @@
+---
+title: January 26th  - My Kid Could Have Made That
+date: 01-26-2023
+image: "../images/26.png"
+format:
+  html:
+    code-overflow: wrap
+    code-fold: true
+    code-tools:
+      source: "../scripts/26_my_kid.R"
+    code-summary: "Show code"
+execute:
+  echo: true
+  eval: false
+---
+
+![](/images/26.png){fig-alt="A generative image of a classic blue-lined notebook sheet with a random blue scribble mark placed in the center." fig-align="center"}
+
+
+```{r}
+
+```

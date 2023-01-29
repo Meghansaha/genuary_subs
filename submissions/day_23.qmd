@@ -1,0 +1,22 @@
+---
+title: January 23rd  - More Moiré
+date: 01-23-2023
+image: "../images/23.png"
+format:
+  html:
+    code-overflow: wrap
+    code-fold: true
+    code-tools:
+      source: "../scripts/23_more_moire.R"
+    code-summary: "Show code"
+execute:
+  echo: true
+  eval: false
+---
+
+![](/images/23.png){fig-alt="An abstract generative art piece with nine moire patterned turquoise diamonds in a grid. The background is black with faded and varied white patterned lines. In the center behind the diamonds is a turquoise donut shape." fig-align="center"}
+
+
+```{r}
+
+```
