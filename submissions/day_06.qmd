@@ -1,0 +1,206 @@
+---
+title: January 6th  - Steal Like an Artist
+date: 01-06-2023
+image: "../images/06.png"
+format:
+  html:
+    code-overflow: wrap
+    code-fold: true
+    code-tools:
+      source: "../scripts/06_steal_art.R"
+    code-summary: "Show code"
+execute:
+  echo: true
+  eval: false
+---
+
+![](/images/06.png){fig-alt="A copy of artist Michel Majerus paiting what looks good today may not look good tomorrow painting." fig-align="center"}
+
+```{r}
+#=============================================================================#
+#Library Load-in---------------------------------------------------------------
+#=============================================================================#
+
+library(dplyr) #Data wrangling
+library(showtext) #Custom fonts
+library(ggplot2) #for plotting
+
+#=============================================================================#
+#Font load-in------------------------------------------------------------------
+#=============================================================================#
+
+font_add_google("Neucha")
+showtext_auto()
+
+#=============================================================================#
+#Data Set up-------------------------------------------------------------------
+#=============================================================================#
+
+#Angles for making a circle#
+theta <- seq(0,2*pi, length.out = 100)
+
+#Setting color options#
+green <- "#A1BD56"
+red <- "#D12929"
+dark_orange <- "#D35421"
+light_orange <- "#EDAF74"
+medium_orange <- "#EB822F"
+pink <- "#ECAFCE"
+light_pink <- "#F1D2E1"
+medium_red <- "#D94253"
+black <- "#000000"
+background <- "#F0F1EC"
+
+#Making a standard unit circle#
+unit_circle <- tibble(x = cos(theta),
+                    y = sin(theta))
+
+#Manually Made Circles)
+green_circle <- unit_circle |>
+mutate(x = x - 1,
+       y = y + 1,
+       group = "green")
+
+red_circle <- unit_circle |>
+mutate(x = x - 1,
+       y = y - 1.5,
+       group = "red")
+
+pink_circle <- unit_circle |>
+mutate(x = x + .2,
+       y = y,
+       group = "pink")
+
+light_pink_circle <- unit_circle |>
+mutate(x = x + 2,
+       y = y,
+       group = "lightpink")
+
+med_red_circle <- unit_circle |>
+mutate(x = x + 3.5,
+       y = y + 1,
+       group = "med_red")
+
+black_circle <- unit_circle |>
+mutate(x = x + 3.3,
+       y = y -1.5 ,
+       group = "black_red")
+
+#Text Objects#
+headline <- tibble(x = 1.23,
+                 y = 1.2,
+                 label = "what looks good today",
+                 group = "text")
+
+byline <- tibble(x = -.4,
+               y = .2,
+               label = "may not look good tomorrow",
+               group = "text")
+
+pink_text <- tibble(x = 2.01,
+                  y = .3,
+                  label = "what lc",
+                  group = "text")
+
+pinkbyline <- tibble(x = 2.1,
+                   y = -.8,
+                   label = "may not look",
+                   group = "text")
+
+red_text <- tibble(x = -1.3,
+                 y = -1.5,
+                 label = "what lc",
+                 group = "text")
+
+redbyline <- tibble(x = -.2,
+                  y = -1.5,
+                  label = "may not look",
+                  group = "text")
+
+blacktext <- tibble(x = 3,
+                  y = -1.5,
+                  label = "NOW'S THE TIME",
+                  group = "text")
+
+#Texture for the overall image#
+texture <- tibble(expand.grid(x = seq(-1.7,4.2, length.out = 100),
+                            y = seq(-3,2, length.out = 100),
+                            group = "texture"))
+
+#=============================================================================#
+#Final Piece-------------------------------------------------------------------
+#=============================================================================#
+
+green_circle |>
+  ggplot(aes(x,y, group = group))+
+  theme_void()+
+  theme(plot.background = element_rect(fill = background))+
+  geom_polygon(data = red_circle,
+               fill = red, 
+               color = light_orange, 
+               linewidth = 5)+
+  geom_polygon(data = pink_circle, 
+               fill = pink, 
+               color = pink, 
+               linewidth = 5, 
+               position = position_jitter(width = .005, height = .005))+
+  geom_polygon(data = med_red_circle, 
+               fill = medium_red, 
+               color = medium_red,
+               linewidth = 5, 
+               position = position_jitter(width = .005, height = .005))+
+  geom_polygon(data = light_pink_circle, 
+               fill = light_pink, 
+               color = medium_orange, 
+               linewidth = 5)+
+  geom_polygon(fill = green, 
+               color = dark_orange, 
+               linewidth = 5, 
+               position = position_jitter(width = .005, height = .005))+
+  geom_polygon(data = black_circle, 
+               fill = black, 
+               color = black, 
+               linewidth = 5, 
+               position = position_jitter(width = .005, height = .005))+
+  geom_text(data = headline, aes(x,y,label = label), 
+            size = 37.5, 
+            family = "Neucha")+
+  geom_text(data = byline, aes(x,y,label = label), 
+            size = 8, 
+            family = "Neucha")+
+  geom_text(data = pink_text, aes(x,y,label = label), 
+            size = 34.2, 
+            family = "Neucha", 
+            color = medium_orange)+
+  geom_text(data = pinkbyline, aes(x,y,label = label), 
+            size = 8, 
+            family = "Neucha", 
+            color = medium_orange)+
+  geom_text(data = red_text, aes(x,y,label = label), 
+            size = 34.2, 
+            family = "Neucha", 
+            color = light_orange, 
+            angle = 90)+
+  geom_text(data = redbyline, aes(x,y,label = label), 
+            size = 8, 
+            family = "Neucha", 
+            color = light_orange, 
+            angle = 90)+
+  geom_text(data = blacktext, aes(x,y,label = label), 
+            size = 9, 
+            family = "Neucha", 
+            color = "white")+
+  geom_path(data = texture, color = colorRampPalette(c(background,"#C48E8E"))(nrow(texture)), 
+            linewidth = sample(seq(.1,3, length.out = 20), nrow(texture), replace = TRUE), 
+            alpha = .05, 
+            position = position_jitter(width = .005, height = .005))+
+  coord_equal(xlim = c(-1.7,4.2), 
+              ylim = c(-3,2), 
+             expand = FALSE)
+
+#To save the output:
+# ggsave("images/06.png",
+#        dpi = 300,
+#        device = "png")
+
+```

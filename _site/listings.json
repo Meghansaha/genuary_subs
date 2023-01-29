@@ -2,7 +2,14 @@
   {
     "listing": "/index.html",
     "items": [
-      "/submissions/day_1.html"
+      "/submissions/day_01.html",
+      "/submissions/day_02.html",
+      "/submissions/day_03.html",
+      "/submissions/day_04.html",
+      "/submissions/day_05.html",
+      "/submissions/day_06.html",
+      "/submissions/day_07.html",
+      "/submissions/day_08.html"
     ]
   }
 ]

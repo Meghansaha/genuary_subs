@@ -4,6 +4,7 @@
 
 library(dplyr) #For data wrangling/manipulation
 library(purrr) #For list wrangling/manipulation/iterations
+library(ggplot2) #For plotting
 library(gganimate) #For gif creation
 library(transformr) #For gif creation assistance
 
@@ -71,4 +72,5 @@ color_picks %>%
   exit_fade() +
   ease_aes('bounce-in-out')
 
-#Use -> anim_save("image destination and name here.gif") to save output locally
+#Use to save output locally:
+#anim_save("images/01.gif")

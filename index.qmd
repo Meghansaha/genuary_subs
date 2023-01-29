@@ -2,7 +2,7 @@
 title: "Genuary Submissions"
 listing:
   contents: submissions
-  sort: "date desc"
+  sort: "date"
   type: default
 ---
 
@@ -15,6 +15,16 @@ listing:
 body{
 overflow-x: hidden;
 }
+
+#quarto-margin-sidebar{
+  max-width: 0vw;
+}
+
+#quarto-document-content{
+  width: 110%;
+}
 </style>
 ```
 ![](repo_images/banner.png){fig-align="center"}
+
+------------------------------------------------------------------------

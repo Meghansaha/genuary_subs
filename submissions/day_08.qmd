@@ -1,0 +1,9 @@
+---
+title: January 8th  - Signed Distance Functions (Code Not Available)
+date: 01-08-2023
+image: "../images/08.png"
+---
+
+![](/images/08.png){fig-alt="A group of random packed circles in random sizes and colored with a texture blue or purple style. The background is a random pattern of blue and purple lines in a vertical gradient." fig-align="center"}
+
+**Code Not Available/Ready for Open Source**

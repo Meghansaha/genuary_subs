@@ -1,0 +1,113 @@
+library(tidyverse)
+
+vert1 <- tibble(x = seq(0,1, length.out = 5),
+               xend = x,
+               y =0,
+               yend =1,
+               group = "vert")
+
+diagonal1 <- tibble(x = c(0,0,0,0,.25,.5,.75),
+                   xend = c(.25,.5,.75,1,1,1,1),
+                   y = c(.75, .5, .25, 0, 0,0,0),
+                   yend = c(1,1,1,1,.75,.5,.25)) |>
+  mutate(x = x +1,
+         xend = xend +1,
+         group = "diagonal_up")
+
+horiz1 <- tibble(x = 0,
+                xend = 1, 
+                y = seq(0,1, length.out = 5),
+                yend = y) |>
+  mutate(x = x + 2,
+         xend = xend + 2,
+         group = "horiz")
+
+diagonal1a <- tibble(x = c(.75,.5,.2,0,0,0,0),
+                    xend = c(1,1,1,1,.75,.5,.25),
+                    y = c(1,1,1,1,.75,.5,.25),
+                    yend = c(.75,.5,.25,0,0,0,0)) |>
+  mutate(x = x + 3,
+         xend = xend + 3,
+         group = "diagonal_down")
+
+vert1a <- vert1 |>
+  mutate(x = x + 4,
+         xend = xend + 4)
+
+row1_start <- rbind(vert1,diagonal1,horiz1,diagonal1a,vert1a)
+row1_end <- row1_start |>
+  mutate(x = x + 5,
+         xend = xend + 5)
+
+row1 <- rbind(row1_start, row1_end)
+
+diagonal2 <- diagonal1 |>
+  mutate(x = x - 1,
+         xend = xend - 1)
+
+vert2 <- vert1 |>
+  mutate(x = x + 1,
+         xend = xend + 1)
+
+diagonal2a <- diagonal1a |>
+  mutate(x = x + 1,
+         xend = xend + 1)
+
+vert2a <- vert1 |>
+  mutate(x = x + 3,
+         xend = xend + 3)
+
+
+row2_start <- rbind(diagonal2,vert2,horiz1,vert2a,diagonal2a)
+row2_end <- row2_start |>
+  mutate(x = x + 5,
+         xend = xend + 5)
+
+row2 <- rbind(row2_start, row2_end)
+
+row2 <- row2 |>
+  mutate(y = y + 1,
+         yend = yend + 1)
+
+gridlines <- tibble(x = 0:10,
+                    y = x) |>
+  expand.grid()
+
+chunk <- rbind(row1, row2)
+
+ytrans <- 0:4
+
+final_data <- map_df(ytrans, ~chunk |>
+                       mutate(y = y + 2*.x,
+                              yend = yend + 2*.x))
+
+background <- tibble(x = seq(0,10, length.out = 1000),
+                     xend = x,
+                     y = 0,
+                     yend = 10,
+                     color = colorRampPalette(c("#000000","#af3918","#000000", "#a21152","#000000", "#822b75","#000000","#612884","#000000","#154baf","#000000",
+                                                        "#0b82b9","#000000", "#277e9d","#000000","#488e35","#000000","#e3a934","#000000","#b2336a","#000000"))(1000),
+                                                        group = "back")
+
+texture <- background |>
+  select(x,y) |>
+  expand.grid() |>
+  slice_sample(prop  = .10)
+
+final_data |>
+  ggplot(aes(x,y, xend = xend, yend = yend, group = group))+
+    theme_void()+
+    theme(plot.background = element_rect(fill = "#277e9d"))+
+  geom_segment(data = background, color = background$color, size = 1)+
+  geom_segment(color = "black", linewidth = 2)+
+  geom_segment(color = "white", linewidth = .5, linetype = 2)+
+    geom_path(data = gridlines, aes(x,y, group = x), inherit.aes = FALSE, size = 4)+
+    geom_path(data = gridlines, aes(x,y, group = y), inherit.aes = FALSE, size = 4)+
+  geom_point(data = texture, aes(x,y), alpha = .01, size = sample(20:30, nrow(texture), replace = TRUE), color = "#ffffff", inherit.aes = FALSE)+
+  coord_equal(xlim = c(0,10), ylim = c(0,10), expand = FALSE)
+
+
+ggsave("tesselations.png",
+       device = "png",
+       dpi = 300,
+       bg = "transparent")
