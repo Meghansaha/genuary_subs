@@ -14,6 +14,13 @@ execute:
   eval: false
 ---
 
+<center>
+
+[\< Prev: January 8th - Signed Distance Functions (Code Not Available)](day_08.qmd) \| [Next: January 10th - Generative Music\>](day_10.qmd)
+
+</center>
+
+
 ![](/images/09.png){fig-alt="An image of grass blades up close outside with a sky and some clouds within a black circular frame in the center. The background is a patterned red color." fig-align="center"}
 
 ```{r}

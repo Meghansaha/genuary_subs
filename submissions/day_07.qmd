@@ -14,6 +14,12 @@ execute:
   eval: false
 ---
 
+<center>
+
+[\< Prev: January 6th - Steal Like An Artist](day_06.qmd) \| [Next: January 8th - Signed Distance Functions (Code Not Available)\>](day_08.qmd)
+
+</center>
+
 ![](/images/07_a.png){fig-alt="An image that samples the movie poster for Inception's color palette. three areas of blue bars are coming down from the top of the image. A jittering grid is in the background. The background color is a gradient that fades to white towards the bottom of the image. The focal point is multiple red circles of varying sizes that lie together in one big circle near the bottom of the image." fig-align="center"}
 
 ```{r}

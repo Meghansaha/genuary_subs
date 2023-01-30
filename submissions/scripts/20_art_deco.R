@@ -1,5 +1,17 @@
-library(tidyverse)
+#Genuary 20 2023 - Art Deco
 
+#=============================================================================#
+#Library Load-in---------------------------------------------------------------
+#=============================================================================#
+library(dplyr) #For data wrangling
+library(purrr) #For iterations
+library(ggplot2) #For plotting
+
+#=============================================================================#
+#Data Set-up-------------------------------------------------------------------
+#=============================================================================#
+
+#Building Base Data#
 base <- tibble(x = c(1.5,3,3,1.5,1.5,
                      3,5,5,3,3,
                      5,7,7,5,5,
@@ -12,29 +24,35 @@ base <- tibble(x = c(1.5,3,3,1.5,1.5,
                          rep("base_2",5),
                          rep("base_3",5),
                          rep("base_4",5)))
+
+#Windows data#
 windows <- tibble(x = seq(1.8,8.1, length =9 ),
                   xend = x,
                   y = .1,
                   yend = if_else(x > 3 & x < 7, 4.4, 2.9))
 
+#Focal Center data#
 focal <- tibble(x = c(3.75,5.75,5.75,seq(5.75,3.75, length = 100),3.75),
                 y = c(0,0,10,(sin(seq(0,pi, length.out = 100))/2) +10,0)) |>
   mutate(x = x + .2)
 
+#Focal Windows Data#
 focal_windows <- tibble(x = seq(4.2,5.7, length =8),
                         y = seq(.6,9, length = 8)) |>
   expand.grid() 
 
+#Pointy top data#
 top <- tibble(x = c(4.7,5.3,5,4.7),
               y = c(10,10,15,10)) |>
   mutate(x = x -.05)
 
+#Background half circle pattern data#
 half_circle <- tibble(x = c(cos(seq(0,pi, length = 100)),1),
                       y = c(sin(seq(0,pi, length = 100)),0),
                       group = 1) 
 
 
-
+#Background iterations#
 half_circle2 <- map_df(seq(0,3, length.out = 5), ~half_circle |>
                         mutate(x = x * .x,
                                y = y * .x,
@@ -51,32 +69,63 @@ hc_grid <-  map_df(ytrans, ~hc_row|>
                  mutate(y = (y + .x) - 1,
                         group = paste0(group,.x)))
 
+#Overall background texture#
 texture <- tibble(x = seq(0,10, length = 50),
                   y = seq(0,15, length = 50)) |>
   expand.grid()
 
+#background color data#
 back <- tibble(x = 0,
                xend = 10,
                y = seq(0,15, length = 500),
                yend = y,
                color = colorRampPalette(c("#000000","#8B0000"))(500))
 
+#=============================================================================#
+#Final Piece-------------------------------------------------------------------
+#=============================================================================#
+
 base |>
   ggplot(aes(x,y, group = group))+
   theme_void()+
   theme(plot.background = element_rect(fill = "#8B0000"))+
-  geom_segment(data = back, aes(group = 4, xend = xend, yend = yend), color = back$color)+
-  geom_polygon(data = hc_grid, color = "#d4af37", fill = NA, alpha = .2 , aes(group = rev(group)), linewidth = .1)+
-  geom_point(data = texture, aes(group = 1), color = "#1a1a1a", size = sample(seq(.1,15, length.out = 55), nrow(texture), replace = TRUE), alpha = .04)+
+  geom_segment(data = back, aes(group = 4, xend = xend, yend = yend), 
+               color = back$color)+
+  geom_polygon(data = hc_grid, 
+               color = "#d4af37", 
+               fill = NA, alpha = .2 , 
+               aes(group = rev(group)), 
+               linewidth = .1)+
+  geom_point(data = texture, aes(group = 1), 
+             color = "#1a1a1a", 
+             size = sample(seq(.1,15, length.out = 55), nrow(texture), replace = TRUE), 
+             alpha = .04)+
   geom_polygon(fill = "black")+
-  geom_segment(data = windows, aes(x,y, xend = xend, yend = yend), inherit.aes = FALSE, color = "#d4af37", size = 10)+
-  geom_segment(data = windows, aes(x,y, xend = xend, yend = yend), inherit.aes = FALSE, color = "white", size = 8)+
-  geom_polygon(data = top, fill = "black", group = 1)+
-  geom_polygon(data = focal, fill = "black", group = 1)+
-  geom_point(data = focal_windows, aes(group = 1), shape = 22, fill = 'white', color = "#d4af37", size = 4)+
-  coord_equal(xlim = c(0,10), ylim = c(0,15), expand = FALSE)
+  geom_segment(data = windows, aes(x,y, xend = xend, yend = yend), 
+               inherit.aes = FALSE, 
+               color = "#d4af37", 
+               linewidth = 10)+
+  geom_segment(data = windows, aes(x,y, xend = xend, yend = yend), 
+               inherit.aes = FALSE, 
+               color = "white", 
+               linewidth = 8)+
+  geom_polygon(data = top, 
+               fill = "black", 
+               group = 1)+
+  geom_polygon(data = focal, 
+               fill = "black", 
+               group = 1)+
+  geom_point(data = focal_windows, aes(group = 1), 
+             shape = 22, 
+             fill = 'white', 
+             color = "#d4af37", 
+             size = 4)+
+  coord_equal(xlim = c(0,10), 
+              ylim = c(0,15), 
+              expand = FALSE)
 
-ggsave("day 20.png",
-       device = "png",
-       dpi = 300,
-       bg = "transparent")
+#To save the output:
+# ggsave("20.png",
+#        device = "png",
+#        dpi = 300,
+#        bg = "transparent")

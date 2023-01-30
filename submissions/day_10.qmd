@@ -14,6 +14,12 @@ execute:
   eval: false
 ---
 
+<center>
+
+[\< Prev: January 9th - Plants](day_09.qmd) \| [Next: January 11th - Suprematism\>](day_11.qmd)
+
+</center>
+
 ![](/images/10.png){fig-alt="An image of the five guitar chords maps of the notes played in the Nirvana song, Pennyroyal Tea on a beige background. The lyrics to the song is randomly placed on the page at different positions and angles in a dark maroon font." fig-align="center"}
 
 ```{r}
