@@ -14,6 +14,8 @@ execute:
   eval: false
 ---
 
+<center>[\< Prev: January 1st - Infinite Loop](day_01.qmd) \| [Next: January 3rd - Glitch Art \>](day_03.qmd)</center>
+
 ![](/images/02.png){fig-alt="An image of a textured flower. Each petal has a purple border with blue in the center on a beige background. Smaller circles make up the image and give the illusion of texture." fig-align="center"}
 
 ```{r}

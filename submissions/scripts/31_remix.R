@@ -1,89 +1,43 @@
-#====== Mountains Rtistry Piece  - January 13th R Tunis User Group Workshop======#
+#Genuary 31 2023 - Remix one of your own pieces
 
-#Library Load-In====
-library(tidyverse)
+#=============================================================================#
+#Library Load-in---------------------------------------------------------------
+#=============================================================================#
+library(dplyr)
+library(purrr)
+library(ggplot2)
 
-#Optional Reference Plot====
-ref_plot <- tibble(x = 0:10,
-                   y = 0:10)
+#=============================================================================#
+#Data Set-up-------------------------------------------------------------------
+#=============================================================================#
 
-#plotting the reference plot===
-ref_plot %>%
-  ggplot(aes(x,y))+
-  scale_y_continuous(breaks = seq(0, 10, by = .5))+
-  scale_x_continuous(breaks = seq(0, 10, by = .5))
-
-
-#====Sky Data/Functions/Palettes====
+#Sky (Nebula) data#
+sky <- tibble(x = seq(0,10, length = 100),
+              y = seq(0,10, length = 100)) |>
+  expand.grid() 
 
 #Setting a color palette for the sky in the background===
-sky_pal <- c("#fdacab","#c66c92","#836193","#434a73","#439895","#046c8e","#042047")
+sky_pal <- sample(colorRampPalette(c(rep("#000000",3),rep("#1A0539",5), "#c66c92","#836193","#434a73","#439895","#046c8e",rep("#042047",3)))(nrow(sky)))
+sky_size <- sample(15:35, nrow(sky), replace = TRUE)
 
-#Creating a function that will create the data for the sky in the background===
-# "n" determines how many polygons will fill in the sky background #
-sky_maker <- function(n){
-  
-  #Creating the base of a "skinny" rectangle===
-  x <- c(0,10,10,0)
-  
-  y <- c(0,0,.01,.01)
-  
-  #Making an empty list to fill with lots of tibbles/data===
-  list_back <- list()
-  
-  #For-loop to iterate "n" amount of tibbles/data frames into our empty list== 
-  for(i in seq_along(1:n)){
-    list_back[[i]] <- tibble(x = x,
-                             y = y + i*.01,
-                             group = i)
-  }
-  return(bind_rows(list_back)) #converts all tibbles in the list into a single data frame#
-}
-
-# Using the function to make a sky with 1000 polygons. Storing in an object called "skies"
-skies <- sky_maker(1000) %>%
-  mutate(fill = rep(colorRampPalette(sky_pal)(1000), each = 4))
-
-#Viewing the skies dataframe==
-skies %>%
-  ggplot(aes(x,y,group = group))+
-  geom_polygon(fill = skies$fill)
+sky_texture <- sky |>
+  mutate(color = sky_pal,
+         size = sky_size,
+         group = "sky")
 
 
 #====Stars Data====
-stars_grid <- tibble(crossing(x = seq(0,10, length.out = 100),
-                         y = seq(0,10, length.out = 100))) 
+stars_grid <- tibble(expand.grid(x = seq(0,10, length.out = 100),
+                                 y = seq(0,10, length.out = 100))) 
 
-# crossing example===
-stars_grid_ex <- tibble(x = seq(0,10, length.out = 100),
-                              y = seq(0,10, length.out = 100))
-#Without crossing===
-stars_grid_ex %>%
-  ggplot(aes(x,y))+
-  geom_point() 
-
-#With crossing===
-stars_grid %>%
-  ggplot(aes(x,y))+
-  geom_point() 
-
-#Taking a random sample of 200 rows==
-stars <- slice_sample(stars_grid, n = 200)
-stars <- slice_sample(stars_grid, n = 200)
-
-# Viewing the stars dataframe===
-stars %>%
-  ggplot(aes(x,y))+
-  geom_point(#color = "#ffffff", 
-             position = position_jitter(width =.05, height = .03), 
-             alpha = sample(seq(.2,.9, length.out = 1000), nrow(stars), replace = TRUE),
-             size = sample(seq(.02,.2, length.out = 1000), nrow(stars), replace = TRUE))
-
+stars <- slice_sample(stars_grid, n = 200) |>
+  mutate(group = "stars")
 
 
 #====Mountains Data/Functions/Palettes====
 
 # Function that creates one set of mountains====
+#THIS IS AN OLD FX I'M NOT MAKING THIS MORE EFFICIENT IDC I'M TIRED 🗣 
 mountain_ranger <- function(base,height,rows){
   
   #Creating the first foundation the function will build off of==
@@ -126,127 +80,95 @@ group_n2 <- nrow(range2)/length(unique(range2$group))
 group_total <- length(unique(range$group))
 group_total2 <- length(unique(range2$group))
 
-#Creating custom color palettes for each set of ranges==
-#Takes a sample so that each set of mountain within a range can have it's own color.#
-#Then repeats these numbers to supply the right amount of values in the right order.#
-#This is important for polygon aesthetics.#
-#We can use the "sort" function to organize our hex colors to change the order of colors that appear.#
-
 # Colors for the first range data set==
-mountain_pal_range <- sort(rep(sample(c("#011d26","#02303f","#1c5a73","#4a748c"),group_total, 
+mountain_pal_range <- sort(rep(sample(c("#011d26","#02303f","#1c5a73","#4a748c","#1A0539","#836193"),group_total, 
                                  replace = TRUE), each = group_n))
 
 # Colors for the second range data set==
-mountain_pal_range2 <- sort(rep(sample(c("#011d26","#02303f","#1c5a73","#4a748c"),group_total2, 
+mountain_pal_range2 <- sort(rep(sample(c("#011d26","#02303f","#1c5a73","#4a748c","#836193",rep("#1A0539",4)),group_total2, 
                                   replace = TRUE), each = group_n2))
 
-# Viewing the mountain ranges
-range %>%
-  ggplot(aes(x=x,y=y,group=group))+
-  geom_polygon(fill = mountain_pal_range, 
-               color = colorRampPalette(c("#333333",mountain_pal_range))(10)[5], 
-               size =.56,
-               alpha = .9, 
-               position = position_jitter(width = .1)) +
-  geom_polygon(data = range2, fill = mountain_pal_range2,
-               color = colorRampPalette(c("#333333",mountain_pal_range2))(10)[5], size =.5,alpha = .9, 
-               position = position_jitter(width = .1))
 
 #====Trees Data/Functions/Palettes====
+#Creating tree options#
+x_trans <- seq(0,9.9, by = .1)
+y_trans <- sample(seq(-.8,.5, length = 30), length(x_trans), replace = TRUE)
+tree_pal <- sample(colorRampPalette(c("#224b39", "#3D6E38", "#082922"))(length(x_trans)))
 
+tree_opts <- list(x_trans, y_trans, tree_pal)
 
-#Creating data for our "Trees"===
-# Our canvas is 10 units wide. We want to go from 0 to 10 and back again on the X axis#
-# We want to create variation in the height of this data set at different points#
-# But we don't want it too high. We can limit the height from .4 to 1 units on the plot#
-
-trees <- tibble(x = c(0, 10, seq(10,0, length.out = 500)), 
-                y = c(0, 0, .4, sample(seq(.4,1, length.out = 498)), 0))
-
-
-#Viewing our trees===
-trees %>%
-  ggplot(aes(x=x, y=y))+
-  geom_polygon(color = "#082922", size = 2, fill = "#224b39")+
-  coord_cartesian(xlim = c(0,10), ylim = c(0,10))
-
+#Creating tree data#
+trees <- pmap_df(tree_opts, ~tibble(x = c(0,.1,
+                                          rep(.1,100),
+                                          .1,0,
+                                          rep(0,100)),
+                                    y = c(0,0,
+                                          seq(0,1.5 + ..2, length = 100),
+                                          1.5 + ..2, 1.5 + ..2,
+                                          seq(1.5 + ..2,0, length = 100)),
+                                    group = "tree_") |>
+                   mutate(x = x + ..1,
+                          group = paste0(group,..1),
+                          fill = ..3))
 
 #====Frame Data====
-# Just out x and y limits#
+# Just our x and y limits#
+frame <- tibble(x = c(0,10,10,0,0),
+                y = c(0,0,10,10,0),
+                group = "frame")
 
-frame <- tibble(x = c(0,10,10,0),
-                y = c(0,0,10,10))
+#=============================================================================#
+#Final Piece-------------------------------------------------------------------
+#=============================================================================#
 
-# Viewing our frame around the plot===
-frame %>%
-  ggplot(aes(x=x, y=y)) +
-  geom_polygon(color = "#000000", 
-               fill = NA, 
-               size = 7,
-               position = position_jitter(width = .1, height = .1))
-
-
-# Final plot creation====
-# Remember that ggplot plots layers in the order that's present in the code #
-# Layers listed first will go in the "back" of the plot #
-# Our "skies" data set should come first because the sky is in the background of the image #
-
-#==Skies Layer==#
-skies  %>%
+sky_texture  %>%
   ggplot(aes(x=x,y=y, group = group)) +
   theme_void()+
-  theme(panel.background = element_rect(fill = "#042047"))+
-  coord_cartesian(xlim = c(0,10), ylim = c(0,10), clip = "on") +
-  geom_polygon(fill = colorRampPalette(sky_pal)(nrow(skies))) +
-  
-#==Stars Layer==#
-  geom_point(data = stars, aes(x=x,y=y), 
+  theme(panel.background = element_rect(fill = "#000000"))+
+  geom_point(color = sky_texture$color,
+             size = sky_texture$size,
+             alpha = .02) +
+  geom_point(data = stars, 
              color = "#ffffff",
              position = position_jitter(width =.05, height = .03), 
              alpha = sample(seq(.2,.9, length.out = 1000),nrow(stars), replace = TRUE),
-             size = sample(seq(.02,.2, length.out = 1000),nrow(stars), replace = TRUE), 
-             inherit.aes = FALSE)+ # <- The stars set does not have a "group" variable like the skies data set. We need this here.#
-
-#==First Mountain Range Layer==#
+             size = sample(seq(.02,.2, length.out = 1000),nrow(stars), replace = TRUE))+
   geom_polygon(data = range, 
                fill = mountain_pal_range,
                color = "#011D26", 
-               size =.56,
+               linewidth =.56,
                alpha = .9, 
                position = position_jitter(width = .1)) +
-  
-#==Second Mountain Range Layer==#
   geom_polygon(data = range2, 
-               fill = mountain_pal_range2,
+               fill = rev(mountain_pal_range2),
                color = "#011D26", 
-               size =.5,
+               linewidth =.5,
                alpha = .9, 
                position = position_jitter(width = .1)) +
-  
-#==Trees Layer==#
-  geom_polygon(data = trees, aes(x=x,y=y), 
+  geom_polygon(data = range2, aes(y = y - .4),
+               fill = "#836193",
+               color = "#011D26", 
+               linewidth =.5,
+               alpha = .5, 
+               position = position_jitter(width = .1)) +
+  geom_polygon(data = trees, 
                color = "#082922", 
-               size = 2, 
-               fill = "#224b39",
-               inherit.aes = FALSE)+
-  
-#==Frame Layer==#
-  geom_polygon(data = frame, aes(x=x,y=y), 
-               color = "#000000", 
-               fill = NA, 
-               size = 7, 
-               position = position_jitter(width = .1, height = .1),
-               inherit.aes = FALSE)
-
-#Although images can be saved from the Plots console, The ggsave function from ggplot can also be used#
+               linewidth = .1, 
+               fill = trees$fill,
+               position = position_jitter(width = .03))+
+  geom_path(data = frame, 
+            color = "#000000", 
+            linewidth = 10, 
+            position = position_jitter(width = .1, height = .1))+
+  coord_cartesian(xlim = c(0,10), ylim = c(0,10), clip = "on",expand = FALSE) 
 
 #Saving the plot to the directory====
-ggsave("Day 31 remix.png", #file path of the image you'd like
-       device = "png", #device to use. Image file type (can be png, jpeg, etc.)
-       height = 11.5, #height of the finished image
-       width = 15.3, #Width of the finished image
-       units = "in", #units for the height and width ("in" is inches)
-       dpi = 300, #Plot resolution. Standard print is usually 300dpi.
-       bg = "transparent") #Sets the background color of your image)
+# ggsave("images/remix.png", 
+#        device = "png", 
+#        height = 11.5, 
+#        width = 15.3, 
+#        units = "in", 
+#        dpi = 300, 
+#        bg = "transparent") 
 
 

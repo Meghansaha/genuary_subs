@@ -1,28 +1,42 @@
-library(tidyverse)
+#Genuary 29 2023 - Maximalism 
 
+#=============================================================================#
+#Library Load-in---------------------------------------------------------------
+#=============================================================================#
+library(dplyr) #For Data Wrangling
+library(purrr) #For iterations
+library(ggplot2) #For Plotting
+
+#Angle setting for the curves#
 theta <- seq(0,-pi, length = 1000)
+
+#Number of "fingers"#
 n <- 50
+
+#Page limits#
 xmin <- 0
 xmax <- 10
 ymin <- 0
 ymax <- 10
 
+#Starting points for the "fingers"#
 y_starts <- sample(seq(ymax - 3, ymax, length = n))
 x_starts <- sample(seq(xmin, xmax, length = n))
 
+#Color for the "fingers"#
 fills <- sort(colorRampPalette(c("#af3918", "#a21152", "#822b75","#612884","#154baf",
-                                     "#0b82b9", "#277e9d","#488e35","#e3a934","#b2336a"))(n))
+                                 "#0b82b9", "#277e9d","#488e35","#e3a934","#b2336a"))(n))
                                      
-
+#finger options for iterations#
 drip_opts <- list(1:n,
                   y_starts,
                   x_starts,
                   fills)
 
+#Jitter precision setting#
 jit_n <- .03
 
-
-
+#Finger data from the top-down#
 drip <- pmap_df(drip_opts, ~tibble(x = c(..3,
                                          jitter(rep(..3,1000), amount = jit_n),
                                          jitter(cos(theta)/2 + ..3 - .5, amount = jit_n),
@@ -51,7 +65,7 @@ drip <- pmap_df(drip_opts, ~tibble(x = c(..3,
                                             rep("#1a1a1a",3002)))
 )
 
-
+# Bottom Row Data - repeat of above but reversed for bottom-up#
 y_starts2 <- sample(seq(ymin + 3, ymin, length = n))
 x_starts2 <- sample(seq(xmin, xmax, length = n))
 
@@ -93,6 +107,7 @@ drip_below <- pmap_df(drip2_opts, ~tibble(x = c(..3,
                                             rep("#1a1a1a",3002)))
 )
 
+#Polka dot data#
 polka <- tibble(x = seq(xmin,xmax, by = .2),
                 y = seq(ymin,ymax, by = .2)) |>
   expand.grid() |>
@@ -100,8 +115,9 @@ polka <- tibble(x = seq(xmin,xmax, by = .2),
          logic = logic %% 2 != 0) |>
   filter(logic)
 
+#Overall texture data#
 texture_top <- tibble(x = seq(xmin,xmax, by = .1),
-                  y = seq(ymin,ymax, by = .1)) |>
+                      y = seq(ymin,ymax, by = .1)) |>
   expand.grid() |>
   mutate(logic = row_number(),
          logic = logic %% 2 != 0) |>
@@ -109,6 +125,7 @@ texture_top <- tibble(x = seq(xmin,xmax, by = .1),
   mutate(logic = sp::point.in.polygon(x,y, drip$x, drip$y)) |>
   filter(logic == 1)
 
+#Data for background gradient#
 square <- tibble(x = c(0,.5,
                        rep(.5,1000),
                        rep(0,1000)),
@@ -122,26 +139,44 @@ n_grid <- 1:(length(x_trans))
 rect_opts <- list(x_trans,
                   colorRampPalette(c("#000000","#ffffff"))(length(x_trans)),
                   n_grid)
-  
+
+#background gradient data#  
 grid_texture <- pmap_df(rect_opts, ~square |>
                        mutate(x = x + ..1,
                               group = ..3,
                               fill = ..2))
 
+#=============================================================================#
+#Final Piece-------------------------------------------------------------------
+#=============================================================================#
+
 drip |> 
   ggplot(aes(x,y, group = rev(group)))+
   theme_void()+
   theme(plot.background = element_rect(fill = "white"))+
-  geom_polygon(data = grid_texture, fill = grid_texture$fill, color = rev(grid_texture$fill), size = .1, position = position_jitter(width = .05, height = .2) )+
-  geom_point(data = polka, aes(x,y), inherit.aes = FALSE, color = "black", size = 2, shape = 21, stroke = 2,
+  geom_polygon(data = grid_texture, 
+               fill = grid_texture$fill, 
+               color = rev(grid_texture$fill), 
+               linewidth = .1, 
+               position = position_jitter(width = .05, height = .2))+
+  geom_point(data = polka, aes(x,y), 
+             inherit.aes = FALSE, 
+             color = "black", 
+             size = 2, 
+             shape = 21, 
+             stroke = 2,
              fill = sample(colorRampPalette(c("#af3918", "#a21152", "#822b75","#612884","#154baf",
-                                                       "#0b82b9", "#277e9d","#488e35","#e3a934","#b2336a"))(nrow(polka))))+
-  geom_polygon(fill = drip$fill, color = "#1a1a1a")+
-  geom_polygon(data = drip_below, fill = drip_below$fill, color = "#1a1a1a")+
+                                              "#0b82b9", "#277e9d","#488e35","#e3a934","#b2336a"))(nrow(polka))))+
+  geom_polygon(fill = drip$fill, 
+               color = "#1a1a1a")+
+  geom_polygon(data = drip_below, 
+               fill = drip_below$fill, 
+               color = "#1a1a1a")+
   coord_cartesian(xlim = c(xmin, xmax),
                   ylim = c(ymin, ymax),
                   expand = FALSE)
 
-ggsave("day 29.png",
-       dpi = 300,
-       device = "png")
+#To save the output:
+# ggsave("images/29.png",
+#        dpi = 300,
+#        device = "png")

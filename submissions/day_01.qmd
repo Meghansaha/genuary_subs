@@ -14,6 +14,8 @@ execute:
   eval: false
 ---
 
+<center>\| [Next: January 2nd - Made in Ten Minutes \>](day_02.qmd)</center>
+
 [![](/images/01.gif){fig-alt="A gif of an abstract hear-shaped mass with wings protuding from the bottom and wrapping around to the top. The image appears as if it's beating like a heart with rainbow colored changes at each pulse." fig-align="center"}](../images/01.gif)
 
 ```{r }

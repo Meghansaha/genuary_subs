@@ -1,5 +1,17 @@
-library(tidyverse)
+#Genuary 19 2023 - Black and White
 
+#=============================================================================#
+#Library Load-in---------------------------------------------------------------
+#=============================================================================#
+library(dplyr) #Data wrangling
+library(purrr) #Iterating
+library(ggplot2) #Plotting
+
+#=============================================================================#
+#Data Set-up-------------------------------------------------------------------
+#=============================================================================#
+
+#Wave data frames#
 wave1 <- tibble(x = c(seq(0,100, length.out = 1000),
                      rep(100,1000),
                      seq(100,0, length.out = 1000),
@@ -47,6 +59,7 @@ wave4 <- tibble(y = c(seq(0,100, length.out = 1000),
                 group = "wave4_"
 )
 
+#Function for wave manipulations#
 wave_maker <- function(n, wave_df, direction = c("up","down","left","right")){
   
   if(direction %in% c("up","down")){
@@ -65,9 +78,10 @@ wave_maker <- function(n, wave_df, direction = c("up","down","left","right")){
   return(new_waves)
 }
 
+#iterations#
 n1 <- 25
 
-
+#Wave Iterations#
 waves1 <- pmap_df(list(n1,
                        "up"), 
                   ~ wave_maker(..1,wave1, direction = ..2))|>
@@ -97,6 +111,7 @@ waves4 <- pmap_df(list(n1,
 
 waves4$fill <- rep_along(1:nrow(waves4), c(rep("white",4000), rep("black",4000)))
 
+#Center design#
 center <- tibble(x = c(seq(25,75, length = 100),
                        rep(75, 100),
                        seq(75,25, length = 100),
@@ -107,10 +122,12 @@ center <- tibble(x = c(seq(25,75, length = 100),
                        seq(75,25, length = 100)),
                  group = "center_")
 
+#Iterations and options for center#
 n2 <- 50
 trans <- seq(0,25, length.out = n2)
 colors_box <- rev(colorRampPalette(c("#ffffff","#000000"))(n2))
 
+#Center data frame compilation#
 center_data <- pmap_df(list(1:n2, 
                              trans,
                              colors_box), ~tibble(x = c(seq(25+..2,75-..2, length = 100),
@@ -124,6 +141,10 @@ center_data <- pmap_df(list(1:n2,
                                          group = paste0("center_",..1),
                                          fill = ..3)) |>
   arrange(group)
+
+#=============================================================================#
+#Final Piece-------------------------------------------------------------------
+#=============================================================================#
 
 waves1 |>
   ggplot(aes(x,y, group = group))+
@@ -149,12 +170,12 @@ waves1 |>
                position = position_jitter(width = .2, height = .4),
                color = "#1a1a1a",
                fill = waves4$fill) +
-  # geom_polygon(data = wave2, position = position_jitter(width = .02, height = .004)) +
-  # geom_polygon(data = wave3, position = position_jitter(width = .02, height = .004)) +
-  # geom_polygon(data = wave4, position = position_jitter(width = .02, height = .004)) +
-  coord_equal(xlim = c(0,100), ylim = c(0,100), expand = TRUE)
+  coord_equal(xlim = c(0,100), 
+              ylim = c(0,100), 
+              expand = TRUE)
 
-ggsave("day 19.png",
-       device = "png",
-       dpi = 300,
-       bg = "transparent")
+#To save the output:
+# ggsave("images/19.png",
+#        device = "png",
+#        dpi = 300,
+#       bg = "transparent")

@@ -14,6 +14,12 @@ execute:
   eval: false
 ---
 
+<center>
+
+[\< Prev: January 4th - Intersections](day_04.qmd) \| [Next: January 6th - Steal Like An Artist \>](day_06.qmd)
+
+</center>
+
 ![](/images/05.png){fig-alt="An nighttime landscape with a yellow half moon and purple night sky in the horizon. In the foor ground is a forced perspective of a dark ground and an unfinished white area where a trail is supposed to be. In its place is a grid with orange circles at each square's corner." fig-align="center"}
 
 ```{r}
