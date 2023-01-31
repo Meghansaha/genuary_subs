@@ -14,12 +14,7 @@ execute:
   eval: false
 ---
 
-<center>
-
-[\< Prev: January 29th - Maximalism](day_29.qmd) \| [Next: January 31st - Remix One Of Your Works\>](day_31.qmd)
-
-</center>
-
+<center>[\< Prev: January 29th - Maximalism](day_29.qmd) \| [Next: January 31st - Remix One Of Your Works\>](day_31.qmd)</center>
 
 ![](/images/30.png){fig-alt="A generative image of a white moon in a black night sky. The moon has simple circular lined patterns. The night sky has a similar circular pattern but in white." fig-align="center"}
 

@@ -14,12 +14,7 @@ execute:
   eval: false
 ---
 
-
-<center>
-
-[\< Prev: January 3rd - Glitch Art](day_03.qmd) \| [Next: January 5th - Debug View \>](day_05.qmd)
-
-</center>
+<center>[\< Prev: January 3rd - Glitch Art](day_03.qmd) \| [Next: January 5th - Debug View \>](day_05.qmd)</center>
 
 ![](/images/04.png){fig-alt="A grid pattern of thick vertical red and black lines and thick horizontal brown and black lines. The background has a gray wavy pattern. The top of the image has a hazy red fog that lightens up and vanishes before it reahces the middle of the image." fig-align="center"}
 

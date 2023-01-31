@@ -14,12 +14,7 @@ execute:
   eval: false
 ---
 
-<center>
-
-[\< Prev: January 21st - Persian Rug](day_21.qmd) \| [Next: January 23rd - More Moiré\>](day_23.qmd)
-
-</center>
-
+<center>[\< Prev: January 21st - Persian Rug](day_21.qmd) \| [Next: January 23rd - More Moiré\>](day_23.qmd)</center>
 
 ![](/images/22.png){fig-alt="A nineties inspired abstract image with various sizes and pastel colors of squares, triangles, circles, and squiggly lines on a blue and yellow gradient in the background." fig-align="center"}
 

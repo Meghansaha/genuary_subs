@@ -14,11 +14,8 @@ execute:
   echo: true
   eval: false
 ---
-<center>
 
-[\< Prev: January 26th - My Kid Could Have Made That](day_26.qmd) \| [Next: January 28th - Generative Poetry(Made in Canva)\>](day_28.qmd)
-
-</center>
+<center>[\< Prev: January 26th - My Kid Could Have Made That](day_26.qmd) \| [Next: January 28th - Generative Poetry(Made in Canva)\>](day_28.qmd)</center>
 
 ![](/images/27.png){fig-alt="A generative image with a big red circle in the center, a black triangle with random white lines in the center of the red circle. A partial big green circle in the top left corner of the image with 3 smaller green circles descending in size to the right. In the bottom right corner is a partial big blue circle, with three smaller blue circles to the left of it in descending size." fig-align="center"}
 

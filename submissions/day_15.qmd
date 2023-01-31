@@ -14,11 +14,7 @@ execute:
   eval: false
 ---
 
-<center>
-
-[\< Prev: January 14th - Aesemic](day_14.qmd) \| [Next: January 16th - Reflection of a Reflection (Code Not Avaiable)\>](day_16.qmd)
-
-</center>
+<center>[\< Prev: January 14th - Aesemic](day_14.qmd) \| [Next: January 16th - Reflection of a Reflection (Code Not Avaiable)\>](day_16.qmd)</center>
 
 ![](/images/15.png){fig-alt="a generated image of an ocean in the daytime, with clouds hovering over it." fig-align="center"}
 

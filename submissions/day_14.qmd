@@ -14,11 +14,7 @@ execute:
   eval: false
 ---
 
-<center>
-
-[\< Prev: January 13th - Something You've Always Wanted to Learn](day_13.qmd) \| [Next: January 15th - Sine Waves\>](day_15.qmd)
-
-</center>
+<center>[\< Prev: January 13th - Something You've Always Wanted to Learn](day_13.qmd) \| [Next: January 15th - Sine Waves\>](day_15.qmd)</center>
 
 ![](/images/14.png){fig-alt="A mostly red circle with different layers of black and white indescribable text on a beige background with a faded grid texture" fig-align="center"}
 

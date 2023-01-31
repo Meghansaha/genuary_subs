@@ -13,11 +13,8 @@ execute:
   echo: true
   eval: false
 ---
-<center>
 
-[\< Prev: January 18th - Definitely Not A Grid (Code Not Available)](day_18.qmd) \| [Next: January 20th - Art Deco\>](day_20.qmd)
-
-</center>
+<center>[\< Prev: January 18th - Definitely Not A Grid (Code Not Available)](day_18.qmd) \| [Next: January 20th - Art Deco\>](day_20.qmd)</center>
 
 ![](/images/19.png){fig-alt="A generative image with four sets of white and black distorted waves that make a square. In the center in a distorted black abyss." fig-align="center"}
 

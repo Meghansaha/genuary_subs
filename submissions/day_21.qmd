@@ -14,11 +14,7 @@ execute:
   eval: false
 ---
 
-<center>
-
-[\< Prev: January 20th - Art Deco](day_20.qmd) \| [Next: January 22th - Shadows\>](day_22.qmd)
-
-</center>
+<center>[\< Prev: January 20th - Art Deco](day_20.qmd) \| [Next: January 22th - Shadows\>](day_22.qmd)</center>
 
 ![](/images/21.png){fig-alt="A generative art piece that is designed as a blue rug. The border is checkered with varying blue squares, the center is dark blue with a single textured gold diamond in the center. A black border is around the dark blue section of the rug." fig-align="center"}
 

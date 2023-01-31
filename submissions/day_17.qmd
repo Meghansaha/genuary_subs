@@ -14,12 +14,7 @@ execute:
   eval: false
 ---
 
-<center>
-
-[\< Prev: January 16th - Reflection of a Reflection (Code Not Available)](day_16.qmd) \| [Next: January 18th - Definitely Not A Grid (Code Not Available)\>](day_18.qmd)
-
-</center>
-
+<center>[\< Prev: January 16th - Reflection of a Reflection (Code Not Available)](day_16.qmd) \| [Next: January 18th - Definitely Not A Grid (Code Not Available)\>](day_18.qmd)</center>
 
 ![](/images/17.png){fig-alt="A generative art piece of a small square grid of rainbow colored lines that has been blown up and layered over each other multiple times on a black background. The lines appear to be a bit distorted." fig-align="center"}
 

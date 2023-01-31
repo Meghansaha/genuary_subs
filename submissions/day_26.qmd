@@ -14,11 +14,7 @@ execute:
   eval: false
 ---
 
-<center>
-
-[\< Prev: January 25th - Yayoi Kusama (Code Not Available)](day_25.qmd) \| [Next: January 27th - In The Style of Hilma Af Klint\>](day_27.qmd)
-
-</center>
+<center>[\< Prev: January 25th - Yayoi Kusama (Code Not Available)](day_25.qmd) \| [Next: January 27th - In The Style of Hilma Af Klint\>](day_27.qmd)</center>
 
 ![](/images/26.png){fig-alt="A generative image of a classic blue-lined notebook sheet with a random blue scribble mark placed in the center." fig-align="center"}
 

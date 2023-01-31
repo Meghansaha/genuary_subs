@@ -14,11 +14,7 @@ execute:
   eval: false
 ---
 
-<center>
-
-[\< Prev: January 5th - Debug View](day_05.qmd) \| [Next: January 7th - Sample a color palette from your favorite movie/album cover\>](day_07.qmd)
-
-</center>
+<center>[\< Prev: January 5th - Debug View](day_05.qmd) \| [Next: January 7th - Sample a color palette from your favorite movie/album cover\>](day_07.qmd)</center>
 
 ![](/images/06.png){fig-alt="A copy of artist Michel Majerus paiting what looks good today may not look good tomorrow painting." fig-align="center"}
 

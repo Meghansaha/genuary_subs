@@ -14,12 +14,7 @@ execute:
   eval: false
 ---
 
-<center>
-
-[\< Prev: January 2nd - Made in Ten Minutes](day_02.qmd) \| [Next: January 4th - Intersections \>](day_04.qmd)
-
-</center>
-
+<center>[\< Prev: January 2nd - Made in Ten Minutes](day_02.qmd) \| [Next: January 4th - Intersections \>](day_04.qmd)</center>
 
 ![](/images/03.png){fig-alt="An icy looking planet in space. The image have a grid over it that appears to have some pixels that have glitched out." fig-align="center"}
 

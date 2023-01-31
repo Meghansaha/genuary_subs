@@ -14,12 +14,7 @@ execute:
   eval: false
 ---
 
-
-<center>
-
-[\< Prev: January 12th - Tessellation](day_12.qmd) \| [Next: January 14th - Aesemic\>](day_14.qmd)
-
-</center>
+<center>[\< Prev: January 12th - Tessellation](day_12.qmd) \| [Next: January 14th - Aesemic\>](day_14.qmd)</center>
 
 ![](/images/13.png){fig-alt="An image with a simplex noise (worm like) pattern spread throughout the image in red, purple, and blue colors on a black background." fig-align="center"}
 

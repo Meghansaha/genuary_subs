@@ -14,11 +14,7 @@ execute:
   eval: false
 ---
 
-<center>
-
-[\< Prev: January 11th - Suprematism](day_11.qmd) \| [Next: January 13th - Something You've Always Wanted to Learn\>](day_13.qmd)
-
-</center>
+<center>[\< Prev: January 11th - Suprematism](day_11.qmd) \| [Next: January 13th - Something You've Always Wanted to Learn\>](day_13.qmd)</center>
 
 ![](/images/12.png){fig-alt="An image a black grid filled with rainbow colored tiles. Each title hase varying line patterns of thick black lines with striped white lines in the center moving in a vertical, diagonal, or horizontal pattern." fig-align="center"}
 

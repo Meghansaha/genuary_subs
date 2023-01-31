@@ -13,12 +13,8 @@ execute:
   echo: true
   eval: false
 ---
-<center>
 
-[\< Prev: January 23rd - More Moiré](day_23.qmd) \| [Next: January 25th - Yayoi Kusama (Code Not Available)\>](day_25.qmd)
-
-</center>
-
+<center>[\< Prev: January 23rd - More Moiré](day_23.qmd) \| [Next: January 25th - Yayoi Kusama (Code Not Available)\>](day_25.qmd)</center>
 
 ![](/images/24.png){fig-alt="A generative art piece that shows various strips of textured fabric with various autumn-like colors (greens, reds) on a light tan gradient background." fig-align="center"}
 

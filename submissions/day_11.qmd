@@ -14,11 +14,7 @@ execute:
   eval: false
 ---
 
-<center>
-
-[\< Prev: January 10th - Generative Music](day_10.qmd) \| [Next: January 12th - Tessellation\>](day_12.qmd)
-
-</center>
+<center>[\< Prev: January 10th - Generative Music](day_10.qmd) \| [Next: January 12th - Tessellation\>](day_12.qmd)</center>
 
 ![](/images/11.png){fig-alt="An image of two black and white striped quarte circles in the bottom left and top right of the image. The background of the image is filled with thick, distroted red and black lines." fig-align="center"}
 

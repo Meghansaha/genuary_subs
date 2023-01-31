@@ -14,11 +14,7 @@ execute:
   eval: false
 ---
 
-<center>
-
-[\< Prev: January 30th - Minimalism](day_30.qmd) \|
-
-</center>
+<center>[\< Prev: January 30th - Minimalism](day_30.qmd) \|</center>
 
 ![](/images/31.png){fig-alt="An updated image of an old piece by Meghan Harris called mountains. A landscape of a textured night sky with stars in the background, multiple polygon-shaped mountain ranges, and detailed trees in varying shades of green in the foreground" fig-align="center"}
 

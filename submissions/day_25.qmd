@@ -4,12 +4,7 @@ date: 01-25-2023
 image: "../images/25.png"
 ---
 
-<center>
-
-[\< Prev: January 24th - Textile](day_24.qmd) \| [Next: January 26th - My Kid Could Have Made That\>](day_26.qmd)
-
-</center>
-
+<center>[\< Prev: January 24th - Textile](day_24.qmd) \| [Next: January 26th - My Kid Could Have Made That\>](day_26.qmd)</center>
 
 ![](/images/25.png){fig-alt="A generative image of various clusters of black and white packed circles. on white, yellow, turquoise, and red strips of color." fig-align="center"}
 
