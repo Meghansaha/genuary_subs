@@ -1,0 +1,67 @@
+---
+title: "FAQ"
+---
+
+Q: What is Genuary?
+
+*A: It's a daily art challenge. Read about it [here](https://genuary.art/)*
+
+<br>
+
+Q: How did you learn to do generative art in R?
+
+*A: Just like how I taught myself how to do Data Science, I kinda taught myself how to generative art too. Just trial and error and practice.*
+
+<br>
+
+Q: Can I fork your art to learn/practice my own art?
+
+*A: Absolutely!*
+
+<br>
+
+Q: Can I use your code for commercial purposes?
+
+*A: Please don't; It's licensed :) but thank you for asking!*
+
+<br>
+
+Q: Why is the code for some days missing?
+
+*A: Because I'm terrible at keeping organized when crunched for time. I just had a baby and I'm shocked that I even completed the entire month AND that more scripts didn't get accidentally deleted. Some functions I'm also working on for a package so not ready to share yet. I don't have any plans to update the missing days though!*
+
+<br>
+
+Q: Are you selling your art at some point?
+
+A: Yes I am. Just need to adjust to having a baby. Expect a store announcement at some point in 2023.
+
+<br>
+
+Q: Where can I learn how to do generative art in R?
+
+*A: I have several meetups/talks and blog posts talking about this and there are others that have great resources:*
+
+-   Presentation Slides: ["Collages and Patterns: Making aRt in R"](https://meghansaha.github.io/collages_and_patterns/).
+
+-   Presentation Recording: ["Collages and Patterns: Making aRt in R"](https://www.youtube.com/watch?v=hc7VaKRcrcY)
+
+-   Blog Post: ["Thinking Outside the Grid - A"bare bones" intro to Rtistry concepts in R using ggplot."](https://www.thetidytrekker.com/post/thinking-outside-the-grid)
+
+-   Presentation Recording: ["Intro to Rtistry Using ggplot2 in R"](https://lnkd.in/gDcQTK5d)
+
+-   Presentation Slides: ["Intro to Rtistry Using ggplot2 in R"](https://lnkd.in/ghGDreS8)
+
+-   Example Code: ["Bars Example"](https://github.com/Meghansaha/Functions_in_Rtistry/blob/master/scripts/bars_example.R) - (An example on using Purrr functions for Rtistry)
+
+-   Rtistry Presentation Repository: "[Functions in Rtistry](https://github.com/Meghansaha/Functions_in_Rtistry)"
+
+-   "[Anatomy of Generative Art](https://github.com/Ijeamakaanyene/anatomy_of_generative_art)" Talk and Repository- [Ijemaka Anyene](https://ijeamaka.art/portfolio/)
+
+-   "[Art From Code](https://art-from-code.netlify.app/)" Workshop Materials - [Danielle Navarro](https://djnavarro.net/)
+
+<br>
+
+Q: My question isn't here
+
+*A: No worries, just [e-mail me](mailto:meghanha01@gmail.com):*

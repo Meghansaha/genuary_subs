@@ -4,7 +4,14 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "Genuary is an annual daily challenge for generative artist in the month of January. This site holds my Genuary submissions. Currently, only the year 2023 is listed. You can view my submissions here."
+  },
+  {
+    "objectID": "FAQ.html",
+    "href": "FAQ.html",
+    "title": "FAQ",
+    "section": "",
+    "text": "Q: What is Genuary?\nA: It’s a daily art challenge. Read about it here\n\nQ: How did you learn to do generative art in R?\nA: Just like how I taught myself how to do Data Science, I kinda taught myself how to generative art too. Just trial and error and practice.\n\nQ: Can I fork your art to learn/practice my own art?\nA: Absolutely!\n\nQ: Can I use your code for commercial purposes?\nA: Please don’t; It’s licensed :) but thank you for asking!\n\nQ: Why is the code for some days missing?\nA: Because I’m terrible at keeping organized when crunched for time. I just had a baby and I’m shocked that I even completed the entire month AND that more scripts didn’t get accidentally deleted. Some functions I’m also working on for a package so not ready to share yet. I don’t have any plans to update the missing days though!\n\nQ: Are you selling your art at some point?\nA: Yes I am. Just need to adjust to having a baby. Expect a store announcement at some point in 2023.\n\nQ: Where can I learn how to do generative art in R?\nA: I have several meetups/talks and blog posts talking about this and there are others that have great resources:\n\nPresentation Slides: “Collages and Patterns: Making aRt in R”.\nPresentation Recording: “Collages and Patterns: Making aRt in R”\nBlog Post: “Thinking Outside the Grid - A”bare bones” intro to Rtistry concepts in R using ggplot.”\nPresentation Recording: “Intro to Rtistry Using ggplot2 in R”\nPresentation Slides: “Intro to Rtistry Using ggplot2 in R”\nExample Code: “Bars Example” - (An example on using Purrr functions for Rtistry)\nRtistry Presentation Repository: “Functions in Rtistry”\n“Anatomy of Generative Art” Talk and Repository- Ijemaka Anyene\n“Art From Code” Workshop Materials - Danielle Navarro\n\n\nQ: My question isn’t here\nA: No worries, just e-mail me:"
   },
   {
     "objectID": "index.html",
