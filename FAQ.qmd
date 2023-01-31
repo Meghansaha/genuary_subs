@@ -10,7 +10,7 @@ Q: What is Genuary?
 
 Q: How did you learn to do generative art in R?
 
-*A: Just like how I taught myself how to do Data Science, I kinda taught myself how to generative art too. Just trial and error and practice.*
+*A: Just like how I taught myself how to do Data Science, I kinda taught myself how to do generative art too. Just trial and error and practice.*
 
 <br>
 
@@ -34,7 +34,7 @@ Q: Why is the code for some days missing?
 
 Q: Are you selling your art at some point?
 
-A: Yes I am. Just need to adjust to having a baby. Expect a store announcement at some point in 2023.
+*A: Yes I am. Just need to adjust to having a baby. Expect a store announcement at some point in 2023.*
 
 <br>
 
