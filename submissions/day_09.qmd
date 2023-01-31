@@ -7,7 +7,7 @@ format:
     code-overflow: wrap
     code-fold: true
     code-tools:
-      source: "../scripts/09_plants.R"
+      source: "https://github.com/Meghansaha/genuary_subs/tree/master/submissions/scripts/09_plants.R"
     code-summary: "Show code"
 execute:
   echo: true

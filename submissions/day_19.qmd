@@ -7,7 +7,7 @@ format:
     code-overflow: wrap
     code-fold: true
     code-tools:
-      source: "../scripts/19_black_and_white.R"
+      source: "https://github.com/Meghansaha/genuary_subs/tree/master/submissions/scripts/19_black_and_white.R"
     code-summary: "Show code"
 execute:
   echo: true

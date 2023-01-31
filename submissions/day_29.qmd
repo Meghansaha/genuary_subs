@@ -8,7 +8,7 @@ format:
     code-overflow: wrap
     code-fold: true
     code-tools:
-      source: "../scripts/29_maximalism.R"
+      source: "https://github.com/Meghansaha/genuary_subs/tree/master/submissions/scripts/29_maximalism.R"
     code-summary: "Show code"
 execute:
   echo: true

@@ -7,7 +7,7 @@ format:
     code-overflow: wrap
     code-fold: true
     code-tools:
-      source: "../scripts/07_fav_movie.R"
+      source: "https://github.com/Meghansaha/genuary_subs/tree/master/submissions/scripts/07_fav_movie.R"
     code-summary: "Show code"
 execute:
   echo: true

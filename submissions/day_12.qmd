@@ -7,7 +7,7 @@ format:
     code-overflow: wrap
     code-fold: true
     code-tools:
-      source: "../scripts/12_tessellation.R"
+      source: "https://github.com/Meghansaha/genuary_subs/tree/master/submissions/scripts/12_tessellation.R"
     code-summary: "Show code"
 execute:
   echo: true

@@ -4,14 +4,14 @@ This repository currently holds all of my [#genuary](https://genuary.art/) submi
 
 <center>
 
--   Submissions Gallery
+-   [Submissions Gallery](https://meghansaha.github.io/genuary_subs/)
 
--   About Page
+-   [About Page](https://meghansaha.github.io/genuary_subs/about.html)
 
--   FAQ Page
+-   [FAQ Page](https://meghansaha.github.io/genuary_subs/FAQ.html)
 
--   [Submissions Scripts](submissions/scripts)
+-   [Submissions Scripts](https://github.com/Meghansaha/genuary_subs/tree/master/submissions/scripts)
 
--   [Submission Images](images)
+-   [Submission Images](https://github.com/Meghansaha/genuary_subs/tree/master/images)
 
 </center>

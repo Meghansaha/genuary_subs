@@ -7,7 +7,7 @@ format:
     code-overflow: wrap
     code-fold: true
     code-tools:
-      source: "../scripts/02_made_in_ten.R"
+      source: "https://github.com/Meghansaha/genuary_subs/tree/master/submissions/scripts/02_made_in_ten.R"
     code-summary: "Show code"
 execute:
   echo: true

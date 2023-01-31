@@ -8,7 +8,7 @@ format:
     code-overflow: wrap
     code-fold: true
     code-tools:
-      source: "../scripts/27_hilma_af_klint.R"
+      source: "https://github.com/Meghansaha/genuary_subs/tree/master/submissions/scripts/27_hilma_af_klint.R"
     code-summary: "Show code"
 execute:
   echo: true

@@ -7,7 +7,7 @@ format:
     code-overflow: wrap
     code-fold: true
     code-tools:
-      source: "../scripts/03_glitch_art.R"
+      source: "https://github.com/Meghansaha/genuary_subs/tree/master/submissions/scripts/03_glitch_art.R"
     code-summary: "Show code"
 execute:
   echo: true
