@@ -16,7 +16,7 @@ n = 1000
 
 #Limits of the page#
 xmin <- 0
-xmax <- 20
+xmax <- 10
 
 ymin <- 0
 ymax <- 10
@@ -73,10 +73,29 @@ cloud_box <- pmap_df(cloud_opts, ~tibble(x = seq(0,..1, length.out = 20),
 grays <- colorRampPalette(c("#666666", "#ffffff"))(nrow(cloud_box))
 
 #Overall texture#
-texture <- tibble(x= seq(xmin,xmax, length.out = 20),
-                  y = seq(ymin,ymax, length.out = 20),
-                  group = "texture") |>
-  expand.grid()
+# texture <- tibble(x= seq(xmin,xmax, length.out = 20),
+#                   y = seq(ymin,ymax, length.out = 20),
+#                   group = "texture") |>
+#   expand.grid()
+
+size <- .01
+xtrans <- seq(xmin,xmax, by =size)
+ytrans <- seq(ymin,ymax, by =size)
+
+texture <- tibble(x = c(0,size,size,0,0),
+                  y = c(0,0,size,size,0),
+                  group = "grid_0")
+
+fills <- sample(colorRampPalette(c("#000000","#ffffff"))(100),(length(xtrans)*length(ytrans)), replace = TRUE)
+
+
+x1 <- rep(unlist(map(xtrans, ~c(texture$x) + .x) |> flatten()), length(xtrans))
+y1 <- rep(unlist(map(ytrans, ~rep(c(texture$y),length(ytrans)) + .x), length(ytrans)))
+
+grids <- tibble(x = x1,
+                y = y1,
+                fill = rep(fills,5),
+                group = rep(1:(length(xtrans)*length(ytrans)), each = 5))
 
 #=============================================================================#
 #Final Piece-------------------------------------------------------------------
@@ -98,10 +117,11 @@ waves |>
              size = sample(seq(5,10, length.out = 30), nrow(cloud_box), replace = TRUE), 
              alpha = .01, position = position_jitter(width = 5, height = .1), 
              color = sample(grays)) +
-  geom_point(data = texture, 
-             size = sample(seq(10,20, length.out = 50), nrow(texture), replace = TRUE), 
-             alpha = .002, color = "#ffffff", 
-             position = position_jitter(width = .5, height = .4))+
+  geom_polygon(data = grids, fill = grids$fill, alpha = .2)+
+  # geom_point(data = texture, 
+  #            size = sample(seq(10,20, length.out = 50), nrow(texture), replace = TRUE), 
+  #            alpha = .002, color = "#ffffff", 
+  #            position = position_jitter(width = .5, height = .4))+
   coord_cartesian(xlim = c(xmin,xmax),
                   ylim = c(ymin,ymax),
                   expand = FALSE)
