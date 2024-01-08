@@ -1,7 +1,9 @@
 ---
 title: "Genuary Submissions"
 listing:
-  contents: submissions
+  contents:
+  - "year/2023.qmd"
+  #- "year/2024.qmd"
   sort: "date"
   type: grid
 ---

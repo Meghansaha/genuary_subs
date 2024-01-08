@@ -1,0 +1,80 @@
+---
+title: January 30th  - Minimalism
+date: 01-30-2023
+image: "images/30.png"
+format:
+  html:
+    code-overflow: wrap
+    code-fold: true
+    code-tools:
+      source: "https://github.com/Meghansaha/genuary_subs/tree/master/submissions/scripts/30_minimalism.R"
+    code-summary: "Show code"
+execute:
+  echo: true
+  eval: false
+---
+
+<center>[\< Prev: January 29th - Maximalism](day_29.qmd) \| [Next: January 31st - Remix One Of Your Works\>](day_31.qmd)</center>
+
+![](images/30.png){fig-alt="A generative image of a white moon in a black night sky. The moon has simple circular lined patterns. The night sky has a similar circular pattern but in white." fig-align="center"}
+
+```{r}
+#=============================================================================#
+#Library Load-in---------------------------------------------------------------
+#=============================================================================#
+library(dplyr)
+library(purrr)
+library(ggplot2)
+
+#=============================================================================#
+#Data Set-up-------------------------------------------------------------------
+#=============================================================================#
+#Setting angles for the circles#
+theta <- seq(0,2*pi, length = 100)
+
+#Setting a succession of radi for the circles#
+radi <- seq(0,20, length = 100)
+
+#Setting up for iterations#
+n <- 1:length(radi)
+color_pals <- c("#000000", "#ffffff")
+fill_pals <- colorRampPalette(c("#000000","#070b40","#290740"))(length(radi))
+
+#Data Compilation#
+circles <- pmap_df(list(radi,n,fill_pals), ~tibble(x = cos(theta) * .x + 10,
+                                   y = sin(theta) * ..1 + 10,
+                                   group = paste0("ring_",..2),
+                                   color = sample(color_pals, length(theta), replace = TRUE),
+                                   fill = ..3))
+
+#Setting angles for the center circle#
+theta <- seq(0,2*pi, length = 1000)
+
+#Data for the center circle#
+center <- tibble(x = cos(theta) * 5 + 10,
+                 y = sin(theta)* 5 + 10,
+                 color = "#ffffff",
+                 group = "center")
+
+#=============================================================================#
+#Final Piece-------------------------------------------------------------------
+#=============================================================================#
+
+circles |>
+  ggplot(aes(x,y, group = group))+
+  theme_void()+
+  theme(plot.background = element_rect(fill = "#000000"))+
+  geom_polygon(data = center, 
+               fill = "#ffffff")+
+  geom_path(color = circles$color,
+            linewidth = .1)+
+  coord_equal(xlim = c(0,20),
+              ylim = c(0,20),
+              expand = FALSE)
+
+#To save the output:
+# ggsave("images/30.png",
+#        dpi = 300,
+#        device = "png",
+#        bg = "transparent")
+```

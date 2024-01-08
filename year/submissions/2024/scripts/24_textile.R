@@ -1,0 +1,133 @@
+#Genuary 24 2023 - Textile
+
+#=============================================================================#
+#Library Load-in---------------------------------------------------------------
+#=============================================================================#
+library(dplyr)
+library(purrr)
+library(ggplot2)
+
+#=============================================================================#
+#Data Set-up-------------------------------------------------------------------
+#=============================================================================#
+
+#Number of strips#
+n = 10
+
+#Horizontal Strips#
+canvas <- tibble(x = c(seq(0,1, length = 100),
+                       rep(1,100),
+                       seq(1,0, length = 100),
+                       rep(0,100)),
+                 y = c(rep(0,100),
+                       seq(0,10, length = 100),
+                       rep(10, 100),
+                       seq(10,0, length = 100)))
+
+#Vertical Strips#
+canvas2 <- tibble(y = c(seq(0,1, length = 100),
+                       rep(1,100),
+                       seq(1,0, length = 100),
+                       rep(0,100)),
+                 x = c(rep(0,100),
+                       seq(0,11, length = 100),
+                       rep(11, 100),
+                       seq(11,0, length = 100)))
+
+#Scale transformations
+trans <- seq(0,10, length = n)
+trans2 <- seq(0,9, length = n)
+
+#Color options#
+color_pal <- colorRampPalette(sort(c("#ba3834","#731b18","#6a6a2a","#3d3d12","#634d41","#9e7057")))(n)
+border_pal <- map_chr(color_pal, ~colorRampPalette(c(.x, "#000000"))(10)[4])
+
+#Iteration Options#
+cube_opts <- list(trans, color_pal, border_pal)
+cube_opts2 <- list(trans2, color_pal, border_pal)
+
+#Strips data compilation#
+cubes <- pmap_df(cube_opts, ~canvas |>
+                  mutate(x = x +..1,
+                         fill = ..2,
+                         color = ..3,
+                         group = ..1))
+
+verts <- pmap_df(cube_opts2, ~canvas2 |>
+                   mutate(y = y +..1,
+                          fill = ..2,
+                          color = ..3,
+                          group = ..1))
+
+#Overall texture data#
+texture <- tibble(x = -1,
+                  xend = 12,
+                  y = seq(-2,12, length = 100),
+                  yend = y,
+                  color = colorRampPalette(c("#EEC373","#333333","#EEC373","#333333","#EEC373"))(100))
+
+texture2 <- tibble(y = -2,
+                  yend = 12,
+                  x = seq(-1,12, length = 100),
+                  xend = x,
+                  color = colorRampPalette(c("#EEC373","#333333","#EEC373","#333333","#EEC373"))(100))
+
+texture3 <- tibble(x = seq(-1,12, length = 50),
+                   y = seq(-2,12, length = 50)) |>
+  expand.grid()
+
+#=============================================================================#
+#Final Piece-------------------------------------------------------------------
+#=============================================================================#
+cubes |>
+  ggplot(aes(x,y, group = group))+
+  theme_void()+
+  theme(plot.background = element_rect(fill = "#EEC373"))+
+  geom_polygon(position = position_jitter(width = .09), 
+               color = cubes$color, 
+               fill = cubes$fill, 
+               linewidth = .1)+
+  geom_segment(data = texture, aes(x,y, xend = xend, yend = yend), 
+               inherit.aes = FALSE, 
+               color = texture$color, 
+               alpha = .1, 
+               linewidth = 20)+
+  geom_polygon(position = position_jitter(width = .09), 
+               color = cubes$color, 
+               fill = cubes$fill, 
+               linewidth = .1, 
+               alpha = .9)+
+  geom_segment(data = texture2, aes(x,y, xend = xend, yend = yend), 
+               inherit.aes = FALSE, 
+               color = texture2$color, 
+               alpha = .1, 
+               linewidth = 20)+
+  geom_polygon(position = position_jitter(width = .09), 
+               color = cubes$color, 
+               fill = cubes$fill, 
+               linewidth = .1, 
+               alpha = .9)+
+  geom_polygon(position = position_jitter(width = .09), 
+               color = cubes$color, 
+               fill = cubes$fill, 
+               linewidth = .1, 
+               alpha = .4)+
+  geom_polygon(data = verts, 
+               position = position_jitter(width = .09), 
+               color = verts$color, 
+               fill = verts$fill, 
+               linewidth = .1, 
+               alpha = .4)+
+  geom_path(data = texture3, aes(x,y, group = 1), 
+            linewidth = sample(seq(1,10, length = 50), nrow(texture3), replace = TRUE), 
+            color = "#EEC373", 
+            alpha = .05, 
+            position = position_jitter(width = .05, height = .03))+
+  coord_equal(expand = FALSE, 
+                  xlim = c(-1,12), 
+                  ylim = c(-1,11))
+
+# ggsave("images/24.png",
+#        dpi = 300,
+#        device = "png",
+#        bg = "transparent")

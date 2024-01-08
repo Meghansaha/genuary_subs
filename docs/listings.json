@@ -1,38 +1,50 @@
 [
   {
+    "listing": "/year/2024.html",
+    "items": [
+      "/year/submissions/2024/day_01.html"
+    ]
+  },
+  {
     "listing": "/index.html",
     "items": [
-      "/submissions/day_01.html",
-      "/submissions/day_02.html",
-      "/submissions/day_03.html",
-      "/submissions/day_04.html",
-      "/submissions/day_05.html",
-      "/submissions/day_06.html",
-      "/submissions/day_07.html",
-      "/submissions/day_08.html",
-      "/submissions/day_09.html",
-      "/submissions/day_10.html",
-      "/submissions/day_11.html",
-      "/submissions/day_12.html",
-      "/submissions/day_13.html",
-      "/submissions/day_14.html",
-      "/submissions/day_15.html",
-      "/submissions/day_16.html",
-      "/submissions/day_17.html",
-      "/submissions/day_18.html",
-      "/submissions/day_19.html",
-      "/submissions/day_20.html",
-      "/submissions/day_21.html",
-      "/submissions/day_22.html",
-      "/submissions/day_23.html",
-      "/submissions/day_24.html",
-      "/submissions/day_25.html",
-      "/submissions/day_26.html",
-      "/submissions/day_27.html",
-      "/submissions/day_28.html",
-      "/submissions/day_29.html",
-      "/submissions/day_30.html",
-      "/submissions/day_31.html"
+      "/year/2023.html"
+    ]
+  },
+  {
+    "listing": "/year/2023.html",
+    "items": [
+      "/year/submissions/2023/day_01.html",
+      "/year/submissions/2023/day_02.html",
+      "/year/submissions/2023/day_03.html",
+      "/year/submissions/2023/day_04.html",
+      "/year/submissions/2023/day_05.html",
+      "/year/submissions/2023/day_06.html",
+      "/year/submissions/2023/day_07.html",
+      "/year/submissions/2023/day_08.html",
+      "/year/submissions/2023/day_09.html",
+      "/year/submissions/2023/day_10.html",
+      "/year/submissions/2023/day_11.html",
+      "/year/submissions/2023/day_12.html",
+      "/year/submissions/2023/day_13.html",
+      "/year/submissions/2023/day_14.html",
+      "/year/submissions/2023/day_15.html",
+      "/year/submissions/2023/day_16.html",
+      "/year/submissions/2023/day_17.html",
+      "/year/submissions/2023/day_18.html",
+      "/year/submissions/2023/day_19.html",
+      "/year/submissions/2023/day_20.html",
+      "/year/submissions/2023/day_21.html",
+      "/year/submissions/2023/day_22.html",
+      "/year/submissions/2023/day_23.html",
+      "/year/submissions/2023/day_24.html",
+      "/year/submissions/2023/day_25.html",
+      "/year/submissions/2023/day_26.html",
+      "/year/submissions/2023/day_27.html",
+      "/year/submissions/2023/day_28.html",
+      "/year/submissions/2023/day_29.html",
+      "/year/submissions/2023/day_30.html",
+      "/year/submissions/2023/day_31.html"
     ]
   }
 ]

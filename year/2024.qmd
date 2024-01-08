@@ -1,0 +1,36 @@
+---
+title: "2024 Genuary Submissions"
+subtitle: "January 2024"
+image: "../repo_images/2024.png"
+listing:
+  contents: "submissions/2024"
+  sort: "date"
+  type: grid
+---
+
+```{=html}
+<style>
+#title-block-header > div.quarto-title > h1{
+  visibility: hidden;
+}
+
+body{
+overflow-x: hidden;
+}
+
+#quarto-margin-sidebar{
+  max-width: 0vw;
+}
+
+#quarto-document-content{
+  width: 110%;
+}
+</style>
+```
+![](/repo_images/banner.png){fig-alt="Genuary Submissions" fig-align="center"}
+
+![](/repo_images/2024_banner.png){fig-alt="January 2024" fig-align="center"}
+
+------------------------------------------------------------------------
+
+<center><big>**Coming Soon!**</big></center>

@@ -4,4 +4,4 @@ title: "About"
 
 [Genuary](https://genuary.art) is an annual daily challenge for generative artists in the month of January. This site holds my Genuary submissions. Currently, only the year 2023 is listed. You can view my submissions [here](index.qmd).
 
-![](images/remix_deux.png){fig-alt="A mountain range with trees in the foreground and a starry night sky in the background. Generatively made in the R language" fig-align="center"}
+![](year/submissions/2023/images/remix_deux.png){fig-alt="A mountain range with trees in the foreground and a starry night sky in the background. Generatively made in the R language" fig-align="center"}

@@ -1,0 +1,33 @@
+---
+title: "2023 Genuary Submissions"
+image: "../repo_images/2023.png"
+listing:
+  contents: "submissions/2023"
+  sort: "date"
+  type: grid
+---
+
+```{=html}
+<style>
+#title-block-header > div.quarto-title > h1{
+  visibility: hidden;
+}
+
+body{
+overflow-x: hidden;
+}
+
+#quarto-margin-sidebar{
+  max-width: 0vw;
+}
+
+#quarto-document-content{
+  width: 110%;
+}
+</style>
+```
+![](/repo_images/banner.png){fig-alt="Genuary Submissions" fig-align="center"}
+
+![](/repo_images/2023_banner.png){fig-alt="January 2023" fig-align="center"}
+
+------------------------------------------------------------------------

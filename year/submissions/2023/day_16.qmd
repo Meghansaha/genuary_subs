@@ -1,0 +1,11 @@
+---
+title: January 16th  - Reflection of A Reflection (Code Not Available)
+date: 01-16-2023
+image: "images/16_b.png"
+---
+
+<center>[\< Prev: January 15th - Sine Waves](day_15.qmd) \| [Next: January 17th - Grid Inside A Grid Inside A Grid\>](day_17.qmd)</center>
+
+![](images/16_b.png){fig-alt="A group of nature-colored (greens, red, beiges, browns) circles packed into two triangles and reflected to look like 2 hourglasses." fig-align="center"}
+
+**Code Not Available/Ready for Open Source**

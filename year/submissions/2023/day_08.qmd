@@ -1,0 +1,11 @@
+---
+title: January 8th  - Signed Distance Functions (Code Not Available)
+date: 01-08-2023
+image: "images/08.png"
+---
+
+<center>[\< Prev: January 7th - Sample a color palette from your favorite movie/album cover](day_07.qmd) \| [Next: January 9th - Plants\>](day_09.qmd)</center>
+
+![](images/08.png){fig-alt="A group of random packed circles in random sizes and colored with a texture blue or purple style. The background is a random pattern of blue and purple lines in a vertical gradient." fig-align="center"}
+
+**Code Not Available/Ready for Open Source**

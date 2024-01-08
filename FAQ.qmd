@@ -34,13 +34,21 @@ Q: Why is the code for some days missing?
 
 Q: Are you selling your art at some point?
 
-*A: Yes I am. Just need to adjust to having a baby. Expect a store announcement at some point in 2023.*
+*A: Yes I am. Just need to adjust to having a baby. Expect a store announcement at some point.*
 
 <br>
 
 Q: Where can I learn how to do generative art in R?
 
 *A: I have several meetups/talks and blog posts talking about this and there are others that have great resources:*
+
+-   Presentation Recording: ["It's All About Perspective: Making A Case for Generative Art."](https://www.youtube.com/watch?v=48m27OWv-uw)
+
+-   Presentation Slides: ["It's All About Perspective: Making A Case for Generative Art."](https://meghansaha.github.io/a_case_for_genart/#/title-slide)
+
+-   Presentation Recording: ["Collages and Patterns: Making aRt in R"](https://meghansaha.github.io/collages_and_patterns/).
+
+<!-- -->
 
 -   Presentation Slides: ["Collages and Patterns: Making aRt in R"](https://meghansaha.github.io/collages_and_patterns/).
 
