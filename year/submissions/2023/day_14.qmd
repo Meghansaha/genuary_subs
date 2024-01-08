@@ -7,7 +7,7 @@ format:
     code-overflow: wrap
     code-fold: true
     code-tools:
-      source: "https://github.com/Meghansaha/genuary_subs/tree/master/submissions/scripts/14_aesmic.R"
+      source: "https://github.com/Meghansaha/genuary_subs/tree/ee17c875f979a9647d1ecc697171d751b5e73198/year/submissions/2023/scripts/14_aesmic.R"
     code-summary: "Show code"
 execute:
   echo: true

@@ -7,7 +7,7 @@ format:
     code-overflow: wrap
     code-fold: true
     code-tools:
-      source: "https://github.com/Meghansaha/genuary_subs/tree/master/submissions/scripts/23_more_moire.R"
+      source: "https://github.com/Meghansaha/genuary_subs/tree/ee17c875f979a9647d1ecc697171d751b5e73198/year/submissions/2023/scripts/23_more_moire.R"
     code-summary: "Show code"
 execute:
   echo: true
