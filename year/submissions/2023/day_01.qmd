@@ -7,7 +7,7 @@ format:
     code-overflow: wrap
     code-fold: true
     code-tools:
-      source: "https://github.com/Meghansaha/genuary_subs/tree/ee17c875f979a9647d1ecc697171d751b5e73198/year/submissions/2023/scripts/01_infinite_loop.R"
+      source: "https://github.com/Meghansaha/genuary_subs/blob/fbac846f1c3cffc4779a8b6c60e1dd37436329f3/year/submissions/2023/scripts/01_infinite_loop.R"
     code-summary: "Show code"
 execute:
   echo: true
