@@ -1,24 +1,3 @@
----
-title: January 1st  - Particles, lots of them.
-date: 01-01-2024
-image: "images/01.png"
-format:
-  html:
-    code-overflow: wrap
-    code-fold: true
-    code-tools:
-      source: "https://github.com/Meghansaha/genuary_subs/tree/master/year/submissions/2024/scripts/01_particles.R"
-    code-summary: "Show code"
-execute:
-  echo: true
-  eval: false
----
-
-<center>\| [Next: January 2nd - No Palettes \>](day_02.qmd)</center>
-
-[![](images/01.png){fig-alt="An abstract set of citrus-colored particles" fig-align="center" width="100%"}](../year/submissions/2024/images/01.png)
-
-```{r}
 #=============================================================================#
 #Library Load-in---------------------------------------------------------------
 #=============================================================================#
@@ -169,10 +148,9 @@ img_path <-
   )
 
 ## Save the image--------------------------------------------------------------
-#ggsave(
-  #img_path,
-  #dpi = 300,
-  #device = "png",
-  #bg = "transparent"
-#)
-```
+ggsave(
+  img_path,
+  dpi = 300,
+  device = "png",
+  bg = "transparent"
+)

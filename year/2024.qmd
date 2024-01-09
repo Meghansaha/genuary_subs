@@ -32,5 +32,3 @@ overflow-x: hidden;
 ![](/repo_images/2024_banner.png){fig-alt="January 2024" fig-align="center"}
 
 ------------------------------------------------------------------------
-
-<center><big>**Coming Soon!**</big></center>
