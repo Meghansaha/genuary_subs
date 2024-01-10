@@ -16,7 +16,7 @@ execute:
 
 <center>\| [Next: January 2nd - No Palettes \>](day_02.qmd)</center>
 
-[![](images/01.png){fig-alt="An abstract set of citrus-colored particles" fig-align="center" width="100%"}](../year/submissions/2024/images/01.png)
+[![](images/01.png){fig-alt="An abstract set of citrus-colored particles" fig-align="center" width="100%"}](images/01.png)
 
 ```{r}
 #=============================================================================#
